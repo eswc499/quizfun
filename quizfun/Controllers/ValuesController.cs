@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace quizfun.Controllers
+namespace WebApplication1.Controllers
 {
     public class ValuesController : ApiController
     {
