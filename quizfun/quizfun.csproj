@@ -191,8 +191,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\b1.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\c2.js" />
+    <Content Include="Content\circl1.png" />
+    <Content Include="Content\icono1.png" />
+    <Content Include="Content\logo1.jpg" />
+    <Content Include="Content\logo2.jpg" />
+    <Content Include="Content\logo3.jpg" />
+    <Content Include="Content\questions.js" />
+    <Content Include="Content\quiz.js" />
+    <Content Include="Content\s1.jpg" />
+    <Content Include="Content\s2.jpg" />
+    <Content Include="Content\s3.jpg" />
+    <Content Include="Content\temporizador.js" />
+    <Content Include="Content\yes.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -220,6 +234,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\BebasNeue Book.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
