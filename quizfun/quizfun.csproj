@@ -177,7 +177,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\c1Controller.cs" />
+    <Compile Include="Controllers\c2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndeController.cs" />
+    <Compile Include="Controllers\log2Controller.cs" />
+    <Compile Include="Controllers\quizController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -235,6 +240,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\c1\c1.cshtml" />
+    <Content Include="Views\c2\c2.cshtml" />
+    <Content Include="Views\Inde\Inde.cshtml" />
+    <Content Include="Views\log2\log2.cshtml" />
+    <Content Include="Views\quiz\quiz.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

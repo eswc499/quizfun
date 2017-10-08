@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<div class="row">
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <script language="javascript" src="~/Content/temporizador.js"></script>
+        <body onLoad="start();">
+
+            <div id="quizContainer" class="container">
+                <div id="contador" align="center"></div>
+                
+                <h3 id="question" class="question" style="font-size:30px"><b></b></h3>
+                <label class="option"><input type="radio" name="option" value="1"><span id="opt1"></span></label>
+
+                <label class="option"><input type="radio" name="option" value="2"><span id="opt2"></span></label>
+
+                <label class="option"><input type="radio" name="option" value="3"><span id="opt3"></span></label>
+
+                <label class="option"><input type="radio" name="option" value="4"><span id="opt4"></span></label>
+
+                <button id="nextButton" class="next-btn" onClick="loadNextQuestion()">Siguiente</button>
+            </div>
+            <div id="result" class="container result" style="display: none;"></div>
+            <label id="Comprob" class="lbrs" style="display: none"></label>
+            <h1 id="hz" style="display: none"></h1>
+
+            <script src="~/Content/questions.js"></script>
+
+            <script src="~/Content/quiz.js"></script>
+        </body>
+    </div>
+</div>
