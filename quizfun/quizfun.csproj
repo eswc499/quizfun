@@ -187,9 +187,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\Conex.cs" />
+    <Compile Include="Repos\IRepos.cs" />
+    <Compile Include="Repos\IUserRepos.cs" />
+    <Compile Include="Repos\UserRepos.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\base1.mdf" />
+    <Content Include="App_Data\base1_log.ldf">
+      <DependentUpon>base1.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\b1.css" />
     <Content Include="Content\bootstrap.css" />
@@ -262,8 +273,9 @@
     <Content Include="Views\quiz\quiz.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Conex\" />
+    <Folder Include="Views\TableUser\" />
+    <Folder Include="Views\UserService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
