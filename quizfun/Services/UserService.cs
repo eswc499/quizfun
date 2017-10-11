@@ -14,57 +14,32 @@ namespace quizfun.Services
 
         public UserService()
         {
-            userRepos = new UserRepos();
-        }
-
-        public bool CreateSpeaker(User user)
-        {
-            return userRepos.Create(user);
+            userRepos = new userRepos();
         }
 
         public bool CreateUser(User user)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool DeleteSpeaker(int id)
-        {
-            return userRepos.Delete(id);
+            return userRepos.Create(user);
         }
 
         public bool DeleteUser(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<User> ReaderSpeaker()
-        {
-            return userRepos.Reader();
-        }
-
-        public List<User> ReaderSpeakerCountry(int id)
-        {
-            return userRepos.ReaderId(id);
+            return userRepos.Delete(id);
         }
 
         public List<User> ReaderUser()
         {
-            throw new NotImplementedException();
+            return userRepos.Reader();
         }
 
         public List<User> ReaderUserId(string id)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateSpeaker(User user)
-        {
-            return userRepos.Update(user);
+            return userRepos.ReaderId(id);
         }
 
         public bool UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            return userRepos.Update(user);
         }
     }
 }

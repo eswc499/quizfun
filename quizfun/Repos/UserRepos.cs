@@ -8,7 +8,7 @@ using System.Web;
 
 namespace quizfun.Repos
 {
-    public class UserRepos
+    public class userRepos
     {
         SqlConnection cn;
         Conex objCON = new Conex();

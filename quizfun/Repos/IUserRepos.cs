@@ -10,5 +10,6 @@ namespace quizfun.Repos
     interface IUserRepos : IRepos<User>
     {
         List<User> ReaderId(int Id);
+        List<User> ReaderId(string id);
     }
 }
