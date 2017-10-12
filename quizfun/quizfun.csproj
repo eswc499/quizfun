@@ -184,10 +184,18 @@
     <Compile Include="Controllers\IndeController.cs" />
     <Compile Include="Controllers\log2Controller.cs" />
     <Compile Include="Controllers\quizController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\Conex.cs" />
+    <Compile Include="Repos\IUserRepos.cs" />
+    <Compile Include="Repos\IRepos.cs" />
+    <Compile Include="Repos\UserRepos.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\base1.mdf" />
@@ -272,6 +280,7 @@
     <Folder Include="Views\Conex\" />
     <Folder Include="Views\TableUser\" />
     <Folder Include="Views\UserService\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

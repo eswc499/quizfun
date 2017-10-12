@@ -8,7 +8,7 @@ namespace quizfun.Controllers
 {
     public class ca1Controller : Controller
     {
-        // GET: ca1
+        // GET: ca1C:\Users\USUARIO\Source\Repos\quizfun3\quizfun\Content\
         public ActionResult ca1()
         {
             return View();
