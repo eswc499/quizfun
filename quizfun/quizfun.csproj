@@ -179,6 +179,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\c1Controller.cs" />
     <Compile Include="Controllers\c2Controller.cs" />
+    <Compile Include="Controllers\ca1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndeController.cs" />
     <Compile Include="Controllers\log2Controller.cs" />
@@ -199,6 +200,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\c2.js" />
     <Content Include="Content\circl1.png" />
+    <Content Include="Content\circle2.png" />
     <Content Include="Content\icono1.png" />
     <Content Include="Content\logo1.jpg" />
     <Content Include="Content\logo2.jpg" />
@@ -263,6 +265,7 @@
     <Content Include="Views\Inde\Inde.cshtml" />
     <Content Include="Views\log2\log2.cshtml" />
     <Content Include="Views\quiz\quiz.cshtml" />
+    <Content Include="Views\ca1\ca1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Conex\" />
