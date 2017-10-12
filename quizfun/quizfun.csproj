@@ -194,7 +194,6 @@
     <Compile Include="Repos\IUserRepos.cs" />
     <Compile Include="Repos\UserRepos.cs" />
     <Compile Include="Services\IUserService.cs" />
-    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\base1.mdf" />
