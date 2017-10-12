@@ -207,6 +207,7 @@
     <Content Include="Content\logo3.jpg" />
     <Content Include="Content\questions.js" />
     <Content Include="Content\quiz.js" />
+    <Content Include="Content\robot.css" />
     <Content Include="Content\s1.jpg" />
     <Content Include="Content\s2.jpg" />
     <Content Include="Content\s3.jpg" />
@@ -239,7 +240,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\BebasNeue Book.ttf" />
+    <Content Include="fonts\QuattrocentoSans-Regular.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

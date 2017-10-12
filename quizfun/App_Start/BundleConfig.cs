@@ -21,7 +21,7 @@ namespace quizfun
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/b1.css",
                       "~/Content/site.css"));
         }
     }

@@ -1,53 +1,51 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onload="document.getElementById('navbar').style.display='none'">
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>  
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body onload="document.getElementById('navbar').style.display='none'">
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-        <div class="container">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-
-                    <div class="item active">
-                        <img src="~/Content/s1.jpg" alt="Los Angeles" width="1135" height="235">
-                        <div class="carousel-caption">
-                            <h1>APRENDE JUGANDO</h1>
-                            <h4>Herramienta que te ayudara a aprender</h4>
-                        </div>
+                <div class="item active">
+                    <img src="~/Content/s1.jpg" alt="Los Angeles" width="1135" height="235">
+                    <div class="carousel-caption">
+                        <h1>APRENDE JUGANDO</h1>
+                        <h4>Herramienta que te ayudara a aprender</h4>
                     </div>
-
-                    <div class="item">
-                        <img src="~/Content/s2.jpg" alt="Chicago"  width="1135" height="235">
-                        <div class="carousel-caption">
-                            <h1>TEMAS</h1>
-                            <h4>Topicos basados en la curricula actual</h4>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="~/Content/s3.jpg" alt="New York" width="1135" height="235">
-                        <div class="carousel-caption">
-                            <h1>DESTREZAS</h1>
-                            <h4>Diversas habilidades que ganaras</h4>
-                        </div>
-                    </div>
-
                 </div>
 
-               
+                <div class="item">
+                    <img src="~/Content/s2.jpg" alt="Chicago" width="1135" height="235">
+                    <div class="carousel-caption">
+                        <h1>TEMAS</h1>
+                        <h4>Topicos basados en la curricula actual</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/s3.jpg" alt="New York" width="1135" height="235">
+                    <div class="carousel-caption">
+                        <h1>DESTREZAS</h1>
+                        <h4>Diversas habilidades que ganaras</h4>
+                    </div>
+                </div>
+
+            </div>
+
+
             <div class="row">
                 <div class="col-md-4">
                     <h2 style="color:antiquewhite">¿Eres Alumno?</h2>
@@ -57,76 +55,76 @@
                         en los mismos temas que aprendes en la escuela
                     </h5>
                     <button onclick="document.getElementById('id01').style.display = 'block';" style="width:auto;" class="btn btn-default">Mas Informacion</button>
-                    
-                </div>
-                <div class="col-md-4" >
-                    </div>
 
-                    <div class="col-md-4" >
-                        <h2 style="color:antiquewhite">¿Eres Tutor?</h2>
-                        <h5>
-                            Metodologia basada en contenido usado en la malla curricular, aprende a usar
-                            esta aplicación como una nueva herramienta de uso en clase.
-                        </h5>
-                        <button onclick="document.getElementById('id01').style.display = 'block';" style="width:auto;" class="btn btn-default">Mas Informacion</button>
-                    </div>
+                </div>
+                <div class="col-md-4">
                 </div>
 
-                <div class="row">
-
-                    <div class="col-4">
-                    </div>
+                <div class="col-md-4">
+                    <h2 style="color:antiquewhite">¿Eres Tutor?</h2>
+                    <h5>
+                        Metodologia basada en contenido usado en la malla curricular, aprende a usar
+                        esta aplicación como una nueva herramienta de uso en clase.
+                    </h5>
+                    <button onclick="document.getElementById('id01').style.display = 'block';" style="width:auto;" class="btn btn-default">Mas Informacion</button>
                 </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-4">
+                </div>
+            </div>
 
 
-                <div id="id01" class="modal">
+            <div id="id01" class="modal">
 
-                    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-                    <div id="login-overlay" class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                <h4 class="modal-title" id="myModalLabel">INICIA SESIÓN</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <div class="well">
-                                            <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
-                                                <div class="form-group">
-                                                    <label for="username" class="control-label">Usuario</label>
-                                                    <input type="text" class="form-control" id="username" name="username" value="" required="" title="Por favor ingresa usuario" placeholder="ejemplo@gmail.com">
-                                                    <span class="help-block"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="password" class="control-label">Contraseña</label>
-                                                    <input type="password" class="form-control" id="password" name="password" value="" required="" title="Por favor ingresa contraseña">
-                                                    <span class="help-block"></span>
-                                                </div>
-                                                <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="remember" id="remember"> Recordarme
-                                                    </label>
-                                                </div>
-                                                <button type="submit" onclick="login();" class="btn btn-success btn-block">Iniciar Sesion</button>
-                                                <a href="/forgot/" class="btn btn-default btn-block">¿Olvido contraseña?</a>
-                                            </form>
-                                        </div>
+                <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                <div id="login-overlay" class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <h4 class="modal-title" id="myModalLabel">INICIA SESIÓN</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="well">
+                                        <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                            <div class="form-group">
+                                                <label for="username" class="control-label">Usuario</label>
+                                                <input type="text" class="form-control" id="username" name="username" value="" required="" title="Por favor ingresa usuario" placeholder="ejemplo@gmail.com">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password" class="control-label">Contraseña</label>
+                                                <input type="password" class="form-control" id="password" name="password" value="" required="" title="Por favor ingresa contraseña">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="remember" id="remember"> Recordarme
+                                                </label>
+                                            </div>
+                                            <button type="submit" onclick="login();" class="btn btn-success btn-block">Iniciar Sesion</button>
+                                            <a href="/forgot/" class="btn btn-default btn-block">¿Olvido contraseña?</a>
+                                        </form>
                                     </div>
-                                    <div class="col-xs-6">
-                                        <p class="lead">Registrate ahora <span class="text-success">GRATIS</span></p>
-                                        <ul class="list-unstyled" style="line-height: 2">
-                                            <li><span class="fa fa-check text-success"></span> *******</li>
-                                            <li><span class="fa fa-check text-success"></span> *******</li>
-                                            <li><span class="fa fa-check text-success"></span> *******</li>
-                                            <li><span class="fa fa-check text-success"></span> *******</li>
-                                            <li><a href="/read-more/"><u>Mas información</u></a></li>
-                                        </ul>
-                                        <p><a href="/new-customer/" onclick="login()" class="btn btn-info btn-block">Si,registrarme ahora</a></p>
-                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p class="lead">Registrate ahora <span class="text-success">GRATIS</span></p>
+                                    <ul class="list-unstyled" style="line-height: 2">
+                                        <li><span class="fa fa-check text-success"></span> *******</li>
+                                        <li><span class="fa fa-check text-success"></span> *******</li>
+                                        <li><span class="fa fa-check text-success"></span> *******</li>
+                                        <li><span class="fa fa-check text-success"></span> *******</li>
+                                        <li><a href="/read-more/"><u>Mas información</u></a></li>
+                                    </ul>
+                                    <p><a href="/new-customer/" onclick="login()" class="btn btn-info btn-block">Si,registrarme ahora</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
+            </div>
