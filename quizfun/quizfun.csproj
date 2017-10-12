@@ -183,17 +183,10 @@
     <Compile Include="Controllers\IndeController.cs" />
     <Compile Include="Controllers\log2Controller.cs" />
     <Compile Include="Controllers\quizController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repos\Conex.cs" />
-    <Compile Include="Repos\IRepos.cs" />
-    <Compile Include="Repos\IUserRepos.cs" />
-    <Compile Include="Repos\UserRepos.cs" />
-    <Compile Include="Services\IUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\base1.mdf" />
@@ -270,7 +263,6 @@
     <Content Include="Views\Inde\Inde.cshtml" />
     <Content Include="Views\log2\log2.cshtml" />
     <Content Include="Views\quiz\quiz.cshtml" />
-    <Content Include="Views\User\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Conex\" />
