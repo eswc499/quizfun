@@ -7,12 +7,40 @@
  * Based on Bootstrap
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Bootstrap v33.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+
+.btn-infox {
+    color: #ffffff;
+    background-color: #9933cc;
+    border-color: #9933cc;   
+}
+.btn-blockx {
+    display: block;
+    width: 100px;
+    font-size: 20px;
+}
+
+@media screen and (max-width:800px) {
+    .btn-block {
+        width:50px;
+        font-size: 10px;
+    }
+}
+
+.btn-blockx + .btn-blockx {
+        margin-top: 5px;
+}
+
+input[type="submit"].btn-blockx,
+input[type="reset"].btn-blockx,
+input[type="button"].btn-blockx {
+    width: 30%;
+}
 
 .modal {
     display: none; /* Hidden by default */

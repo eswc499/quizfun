@@ -128,16 +128,14 @@ function showSlides() {
         window.close();
     }
 
-    function login() {
-        var user = document.getElementById('username');
-        var pasw = document.getElementById('password');
+    var bd = document.getElementById('bdy');
+    var btx = document.getElementById('bts');
 
-        if (user !== "" && pasw !== "") {
-            alert("ya estas registrado");
+    function resol() {
+        if (bd.width == '200') {
+            btx.style.width = '20';
         }
-        else if (user === "" || pasw === "") {
-            alert("falta datos");
-        }
+        
     }
 
 

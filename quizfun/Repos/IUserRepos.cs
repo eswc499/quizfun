@@ -9,6 +9,6 @@ namespace quizfun.Repos
 {
     interface IUserRepos : IRepos<Cuenta>
     {
-        List<Cuenta> ReaderId(int Id);
+        List<Cuenta> ReaderNick(string nick);
     }
 }

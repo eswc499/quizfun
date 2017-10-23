@@ -24,14 +24,14 @@ namespace quizfun.Controllers
 
 
         // GET: Speaker
-        public ActionResult Index(int Id)
+        public ActionResult Index(String Nick)
         {
             var ListSpeakers = userservice.ReaderUser();
             //ModelState.Clear();
 
-            if (Id != 0)
+            if (Nick != "")
             {
-                ListUsers = userservice.ReaderUserId(Id);
+                ListUsers = userservice.ReaderUserId(Nick);
             }
 
             return View(ListUsers);
@@ -77,7 +77,7 @@ namespace quizfun.Controllers
 
         // POST: Speaker/Edit/5
         [System.Web.Http.HttpPost]
-        public ActionResult Edit(int id, Cuenta user)
+        public ActionResult Edit(String nick, Cuenta user)
         {
             try
             {
@@ -100,9 +100,10 @@ namespace quizfun.Controllers
                 return View();
             }
         }
+    
 
         // GET: Speaker/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
             try
             {

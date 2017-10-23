@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -53,6 +59,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -180,6 +187,7 @@
     <Compile Include="Controllers\c1Controller.cs" />
     <Compile Include="Controllers\c2Controller.cs" />
     <Compile Include="Controllers\ca1Controller.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndeController.cs" />
     <Compile Include="Controllers\log2Controller.cs" />
@@ -188,19 +196,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cuestionario.cs" />
     <Compile Include="Models\Cuenta.cs" />
+    <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\Pregunta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Conex.cs" />
+    <Compile Include="Repos\CursoRepos.cs" />
+    <Compile Include="Repos\ICursoRepos.cs" />
     <Compile Include="Repos\IUserRepos.cs" />
     <Compile Include="Repos\IRepos.cs" />
     <Compile Include="Repos\UserRepos.cs" />
+    <Compile Include="Services\CursoService.cs" />
+    <Compile Include="Services\ICurso.cs" />
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\base1.mdf" />
-    <Content Include="App_Data\base1_log.ldf">
-      <DependentUpon>base1.mdf</DependentUpon>
+    <Content Include="App_Data\QF.mdf" />
+    <Content Include="App_Data\QF_log.ldf">
+      <DependentUpon>QF.mdf</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\b1.css" />
@@ -209,6 +224,7 @@
     <Content Include="Content\c2.js" />
     <Content Include="Content\circl1.png" />
     <Content Include="Content\circle2.png" />
+    <Content Include="Content\for.css" />
     <Content Include="Content\icono1.png" />
     <Content Include="Content\logo1.jpg" />
     <Content Include="Content\logo2.jpg" />
@@ -255,6 +271,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Validate.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -275,12 +292,11 @@
     <Content Include="Views\log2\log2.cshtml" />
     <Content Include="Views\quiz\quiz.cshtml" />
     <Content Include="Views\ca1\ca1.cshtml" />
+    <Content Include="Views\Curso\Create.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Conex\" />
-    <Folder Include="Views\TableUser\" />
-    <Folder Include="Views\UserService\" />
-    <Folder Include="Views\User\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

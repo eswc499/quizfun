@@ -11,8 +11,8 @@ namespace quizfun.Services
     {
         bool CreateUser(Cuenta user);
         List<Cuenta> ReaderUser();
-        List<Cuenta> ReaderUserId(int id);
+        List<Cuenta> ReaderUserId(String Nick);
         bool UpdateUser(Cuenta user);
-        bool DeleteUser(int id);
+        bool DeleteUser(string id);
     }
 }

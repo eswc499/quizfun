@@ -15,19 +15,22 @@ namespace quizfun.Repos
 
         public bool Create(Cuenta t)
         {
-            int i;
             bool ban = false;
             try
             {
                 cn = objCON.getConection();
                 SqlCommand cmd = new SqlCommand("AddNewUser", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", t.Id);
                 cmd.Parameters.AddWithValue("@Usuario", t.Nick);
                 cmd.Parameters.AddWithValue("@Password", t.Password);
+                cmd.Parameters.AddWithValue("@Nombre", t.Nombre);
+                cmd.Parameters.AddWithValue("@ApPat", t.Apellido_Paterno);
+                cmd.Parameters.AddWithValue("@ApMat", t.Apellido_Materno);
+                cmd.Parameters.AddWithValue("@Colegio", t.Colegio);
+                cmd.Parameters.AddWithValue("@Celular", t.Celular);
 
                 cn.Open();
-                i = cmd.ExecuteNonQuery();
+                int i = cmd.ExecuteNonQuery();
                 cn.Close();
 
                 if (i >= 1)
@@ -48,12 +51,12 @@ namespace quizfun.Repos
 
         }
 
-        public bool Delete(int id)
+        public bool Delete(string nick)
         {
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("DeleteUser", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@Nick", nick);
 
             cn.Open();
             int i = cmd.ExecuteNonQuery();
@@ -84,21 +87,26 @@ namespace quizfun.Repos
 
                 speakerList.Add(new Cuenta
                 {
-                    Id = Convert.ToInt32(dr["Id"]),
                     Nick = Convert.ToString(dr["Usuario"]),
-                    Password = Convert.ToString(dr["Contraseña"])
+                    Password = Convert.ToString(dr["Contraseña"]),
+                    Nombre = Convert.ToString(dr["NomUser"]),
+                    Apellido_Paterno = Convert.ToString(dr["ApPater"]),
+                    Apellido_Materno = Convert.ToString(dr["ApMat"]),
+                    Colegio = Convert.ToString(dr["Colegio"]),
+                    Celular=Convert.ToInt32(dr["Celular"])
                 });
             }
             return speakerList;
         }
 
-        public List<Cuenta> ReaderId(int id)
+       
+        public List<Cuenta> ReaderNick(string nick)
         {
             cn = objCON.getConection();
             List<Cuenta> speakerList = new List<Cuenta>();
-            SqlCommand cmd = new SqlCommand("GetUserId", cn);
+            SqlCommand cmd = new SqlCommand("GetUserNick", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@Nick", nick);
 
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -113,9 +121,13 @@ namespace quizfun.Repos
 
                 speakerList.Add(new Cuenta
                 {
-                    Id = Convert.ToInt32(dr["ID"]),
                     Nick = Convert.ToString(dr["Nombre"]),
-                    Password = Convert.ToString(dr["Contraseña"])
+                    Password = Convert.ToString(dr["Contraseña"]),
+                    Nombre = Convert.ToString(dr["NomUser"]),
+                    Apellido_Paterno = Convert.ToString(dr["ApPater"]),
+                    Apellido_Materno = Convert.ToString(dr["ApMat"]),
+                    Colegio = Convert.ToString(dr["Colegio"]),
+                    Celular = Convert.ToInt32(dr["Celular"])
                 });
             }
             return speakerList;
@@ -126,10 +138,14 @@ namespace quizfun.Repos
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("UpdateUser", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Id", t.Id);
             cmd.Parameters.AddWithValue("@Usuario", t.Nick);
-            cmd.Parameters.AddWithValue("@Contraseña", t.Password);
-
+            cmd.Parameters.AddWithValue("@Password", t.Password);
+            cmd.Parameters.AddWithValue("@Nombre", t.Nombre);
+            cmd.Parameters.AddWithValue("@ApPat", t.Apellido_Paterno);
+            cmd.Parameters.AddWithValue("@ApMat", t.Apellido_Materno);
+            cmd.Parameters.AddWithValue("@Colegio", t.Colegio);
+            cmd.Parameters.AddWithValue("@Celular", t.Celular);
+            
             cn.Open();
             int i = cmd.ExecuteNonQuery();
             cn.Close();
