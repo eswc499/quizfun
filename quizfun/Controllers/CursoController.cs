@@ -45,7 +45,7 @@ namespace quizfun.Controllers
         }
 
         // POST: Curso/Create
-        [System.Web.Mvc.HttpPost]
+        [HttpPost]
         public ActionResult Create(Curso cr)
         {
             try

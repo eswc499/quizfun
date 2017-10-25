@@ -192,6 +192,7 @@
     <Compile Include="Controllers\IndeController.cs" />
     <Compile Include="Controllers\log2Controller.cs" />
     <Compile Include="Controllers\quizController.cs" />
+    <Compile Include="Controllers\TemaController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -200,23 +201,24 @@
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Pregunta.cs" />
+    <Compile Include="Models\Tema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Conex.cs" />
     <Compile Include="Repos\CursoRepos.cs" />
     <Compile Include="Repos\ICursoRepos.cs" />
+    <Compile Include="Repos\ITemaRepos.cs" />
     <Compile Include="Repos\IUserRepos.cs" />
     <Compile Include="Repos\IRepos.cs" />
+    <Compile Include="Repos\TemaRepos.cs" />
     <Compile Include="Repos\UserRepos.cs" />
     <Compile Include="Services\CursoService.cs" />
     <Compile Include="Services\ICurso.cs" />
+    <Compile Include="Services\ITemaService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\TemaService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\QF.mdf" />
-    <Content Include="App_Data\QF_log.ldf">
-      <DependentUpon>QF.mdf</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\b1.css" />
     <Content Include="Content\bootstrap.css" />
@@ -310,6 +312,10 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Tema\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

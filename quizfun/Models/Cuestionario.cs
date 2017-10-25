@@ -7,6 +7,6 @@ namespace quizfun.Models
 {
     public class Cuestionario
     {
-        public Pregunta prg { get; set; }
+        public Pregunta pregunta { get; set; }
     }
 }

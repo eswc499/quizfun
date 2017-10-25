@@ -12,8 +12,8 @@ namespace quizfun.Repos
     {
         public SqlConnection getConection()
         {
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
-            return cn;
+             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+                return cn;  
         }
     }
 }

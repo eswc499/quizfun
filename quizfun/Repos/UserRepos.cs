@@ -19,13 +19,14 @@ namespace quizfun.Repos
             try
             {
                 cn = objCON.getConection();
-                SqlCommand cmd = new SqlCommand("AddNewUser", cn);
+                SqlCommand cmd = new SqlCommand("AddNewCuenta", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Usuario", t.Nick);
-                cmd.Parameters.AddWithValue("@Password", t.Password);
-                cmd.Parameters.AddWithValue("@Nombre", t.Nombre);
-                cmd.Parameters.AddWithValue("@ApPat", t.Apellido_Paterno);
-                cmd.Parameters.AddWithValue("@ApMat", t.Apellido_Materno);
+                cmd.Parameters.AddWithValue("@Nick", t.Nick);
+                cmd.Parameters.AddWithValue("@Passwor", t.Password);
+                cmd.Parameters.AddWithValue("@Nomuser", t.Nombre);
+                cmd.Parameters.AddWithValue("@ApPater", t.Apellido_Paterno);
+                cmd.Parameters.AddWithValue("@ApMater", t.Apellido_Materno);
+                cmd.Parameters.AddWithValue("@Ciudad", t.Ciudad);
                 cmd.Parameters.AddWithValue("@Colegio", t.Colegio);
                 cmd.Parameters.AddWithValue("@Celular", t.Celular);
 
@@ -34,7 +35,7 @@ namespace quizfun.Repos
                 cn.Close();
 
                 if (i >= 1)
-                {
+                {   
                     ban = true;
                 }
                 else
@@ -45,7 +46,7 @@ namespace quizfun.Repos
             }
             catch (SqlException ex)
             {
-
+                
             }
             return ban;
 
@@ -74,17 +75,17 @@ namespace quizfun.Repos
             List<Cuenta> speakerList = new List<Cuenta>();
             SqlCommand cmd = new SqlCommand("GetUsers", cn);
             cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
+            
 
             cn.Open();
-            sd.Fill(dt);
+            sd.Fill(ds);
             cn.Close();
 
             foreach (DataRow dr in dt.Rows)
             {
-
-
                 speakerList.Add(new Cuenta
                 {
                     Nick = Convert.ToString(dr["Usuario"]),
@@ -92,6 +93,7 @@ namespace quizfun.Repos
                     Nombre = Convert.ToString(dr["NomUser"]),
                     Apellido_Paterno = Convert.ToString(dr["ApPater"]),
                     Apellido_Materno = Convert.ToString(dr["ApMat"]),
+                    Ciudad=Convert.ToString(dr["Ciudad"]),
                     Colegio = Convert.ToString(dr["Colegio"]),
                     Celular=Convert.ToInt32(dr["Celular"])
                 });
@@ -121,11 +123,12 @@ namespace quizfun.Repos
 
                 speakerList.Add(new Cuenta
                 {
-                    Nick = Convert.ToString(dr["Nombre"]),
-                    Password = Convert.ToString(dr["Contraseña"]),
-                    Nombre = Convert.ToString(dr["NomUser"]),
+                    Nick = Convert.ToString(dr["Nick"]),
+                    Password = Convert.ToString(dr["Passwor"]),
+                    Nombre = Convert.ToString(dr["Nomuser"]),
                     Apellido_Paterno = Convert.ToString(dr["ApPater"]),
-                    Apellido_Materno = Convert.ToString(dr["ApMat"]),
+                    Apellido_Materno = Convert.ToString(dr["ApMater"]),
+                    Ciudad = Convert.ToString(dr["Ciudad"]),
                     Colegio = Convert.ToString(dr["Colegio"]),
                     Celular = Convert.ToInt32(dr["Celular"])
                 });
@@ -138,11 +141,12 @@ namespace quizfun.Repos
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("UpdateUser", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usuario", t.Nick);
-            cmd.Parameters.AddWithValue("@Password", t.Password);
+            cmd.Parameters.AddWithValue("@Nick", t.Nick);
+            cmd.Parameters.AddWithValue("@Passwor", t.Password);
             cmd.Parameters.AddWithValue("@Nombre", t.Nombre);
-            cmd.Parameters.AddWithValue("@ApPat", t.Apellido_Paterno);
-            cmd.Parameters.AddWithValue("@ApMat", t.Apellido_Materno);
+            cmd.Parameters.AddWithValue("@ApPater", t.Apellido_Paterno);
+            cmd.Parameters.AddWithValue("@ApMater", t.Apellido_Materno);
+            cmd.Parameters.AddWithValue("@Ciudad", t.Ciudad);
             cmd.Parameters.AddWithValue("@Colegio", t.Colegio);
             cmd.Parameters.AddWithValue("@Celular", t.Celular);
             

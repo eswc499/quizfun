@@ -18,6 +18,8 @@ namespace quizfun.Models
         public String Nick { get; set; }
         [Required(ErrorMessage = "La contraseña es necesario")]
         public String Password { get; set; }
+        [Required(ErrorMessage ="La ciudad es necesaria")]
+        public String Ciudad { get; set; }
         [Required(ErrorMessage = "El colegio es necesario")]
         public String Colegio { get; set; }
         [Required(ErrorMessage = "El Celular es necesario")]
