@@ -4,14 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebApplication1.Controllers
+namespace quizfun.Controllers
 {
-    public class c2Controller : Controller
+    public class CuentaController : Controller
     {
-        // GET: c2
-        public ActionResult c2()
+        // GET: Cuenta
+        public ActionResult Cuenta()
         {
             return View();
         }
+        
+        
     }
 }

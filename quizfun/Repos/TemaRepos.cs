@@ -105,13 +105,13 @@ namespace quizfun.Repos
             return ListTema;
         }
 
-        public bool Delete(String tema)
+        public bool Delete(Tema tema)
         {
             int i;
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("DeleteTema", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nombre", tema);
+            cmd.Parameters.AddWithValue("@Nombre", tema.Nombre);
 
             cn.Open();
             i = cmd.ExecuteNonQuery();

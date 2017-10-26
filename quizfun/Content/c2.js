@@ -41,6 +41,17 @@
 
 });
 
+function showStuff(id, text, btn) {
+    document.getElementById(id).style.display = 'block';
+    // hide the lorem ipsum text
+    document.getElementById(text).style.display = 'none';
+    // hide the link
+    btn.style.display = 'none';
+}
+
+
+
+
 function htmlbodyHeightUpdate() {
     var height3 = $(window).height()
     var height1 = $('.nav').height() + 50
@@ -128,14 +139,16 @@ function showSlides() {
         window.close();
     }
 
-    var bd = document.getElementById('bdy');
-    var btx = document.getElementById('bts');
+    function login() {
+        var user = document.getElementById('username');
+        var pasw = document.getElementById('password');
 
-    function resol() {
-        if (bd.width == '200') {
-            btx.style.width = '20';
+        if (user != '' && pasw != '') {
+            alert("ya estas registrado");
         }
-        
+        else if (user == '' || pasw == '') {
+            alert("falta datos");
+        }
     }
 
 
@@ -144,3 +157,18 @@ function showSlides() {
         if (window.focus) { newwindow.focus() }
         return false;
     }
+
+  
+
+    $(function () { /* to make sure the script runs after page load */
+
+        $('a.read_more').click(function (event) { /* find all a.read_more elements and bind the following code to them */
+
+            event.preventDefault(); /* prevent the a from changing the url */
+            $(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
+
+        });
+
+    });
+
+  

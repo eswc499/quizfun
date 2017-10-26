@@ -24,9 +24,9 @@ namespace quizfun.Services
             return userRepos.Create(user);
         }
 
-        public bool DeleteUser(string id)
+        public bool DeleteUser(Cuenta c)
         {
-            return userRepos.Delete(id);
+            return userRepos.Delete(c);
         }
 
         public List<Cuenta> ReaderUser()

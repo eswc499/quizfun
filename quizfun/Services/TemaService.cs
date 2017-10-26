@@ -30,7 +30,7 @@ namespace quizfun.Services
             return tmsrv.Reader();
         }
 
-        public bool DeleteTema(string tema)
+        public bool DeleteTema(Tema tema)
         {
             return this.tmsrv.Delete(tema);
         }

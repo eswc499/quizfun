@@ -95,7 +95,7 @@ namespace quizfun.Controllers
        
         // POST: Curso/Delete/5
         [HttpPost]
-        public ActionResult Delete(String nmcr)
+        public ActionResult Delete(Curso nmcr)
         {
             try
             {

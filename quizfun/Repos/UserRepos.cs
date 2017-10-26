@@ -52,12 +52,12 @@ namespace quizfun.Repos
 
         }
 
-        public bool Delete(string nick)
+        public bool Delete(Cuenta c)
         {
             cn = objCON.getConection();
-            SqlCommand cmd = new SqlCommand("DeleteUser", cn);
+            SqlCommand cmd = new SqlCommand("DeleteCuenta", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nick", nick);
+            cmd.Parameters.AddWithValue("@Nick", c.Nick);
 
             cn.Open();
             int i = cmd.ExecuteNonQuery();
@@ -73,7 +73,7 @@ namespace quizfun.Repos
         {
             cn = objCON.getConection();
             List<Cuenta> speakerList = new List<Cuenta>();
-            SqlCommand cmd = new SqlCommand("GetUsers", cn);
+            SqlCommand cmd = new SqlCommand("GetCuentas", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
@@ -81,18 +81,16 @@ namespace quizfun.Repos
             
 
             cn.Open();
-            sd.Fill(ds);
+            sd.Fill(dt);
             cn.Close();
 
             foreach (DataRow dr in dt.Rows)
             {
                 speakerList.Add(new Cuenta
                 {
-                    Nick = Convert.ToString(dr["Usuario"]),
-                    Password = Convert.ToString(dr["Contraseña"]),
-                    Nombre = Convert.ToString(dr["NomUser"]),
+                    Nombre = Convert.ToString(dr["Nomuser"]),
                     Apellido_Paterno = Convert.ToString(dr["ApPater"]),
-                    Apellido_Materno = Convert.ToString(dr["ApMat"]),
+                    Apellido_Materno = Convert.ToString(dr["ApMater"]),
                     Ciudad=Convert.ToString(dr["Ciudad"]),
                     Colegio = Convert.ToString(dr["Colegio"]),
                     Celular=Convert.ToInt32(dr["Celular"])
@@ -106,7 +104,7 @@ namespace quizfun.Repos
         {
             cn = objCON.getConection();
             List<Cuenta> speakerList = new List<Cuenta>();
-            SqlCommand cmd = new SqlCommand("GetUserNick", cn);
+            SqlCommand cmd = new SqlCommand("GetNomUsuario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Nick", nick);
 
@@ -119,8 +117,6 @@ namespace quizfun.Repos
 
             foreach (DataRow dr in dt.Rows)
             {
-
-
                 speakerList.Add(new Cuenta
                 {
                     Nick = Convert.ToString(dr["Nick"]),
@@ -139,11 +135,11 @@ namespace quizfun.Repos
         public bool Update(Cuenta t)
         {
             cn = objCON.getConection();
-            SqlCommand cmd = new SqlCommand("UpdateUser", cn);
+            SqlCommand cmd = new SqlCommand("UpdateCuenta", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Nick", t.Nick);
             cmd.Parameters.AddWithValue("@Passwor", t.Password);
-            cmd.Parameters.AddWithValue("@Nombre", t.Nombre);
+            cmd.Parameters.AddWithValue("@Nomuser", t.Nombre);
             cmd.Parameters.AddWithValue("@ApPater", t.Apellido_Paterno);
             cmd.Parameters.AddWithValue("@ApMater", t.Apellido_Materno);
             cmd.Parameters.AddWithValue("@Ciudad", t.Ciudad);

@@ -26,7 +26,7 @@ namespace quizfun.Controllers
         // GET: Speaker
         public ActionResult Index()
         {
-            return View();
+            return View(userservice.ReaderUser());
         }
 
         // GET: Speaker/Details/5
@@ -53,7 +53,7 @@ namespace quizfun.Controllers
 
                     if (userservice.CreateUser(user))
                     {
-                        ViewBag.Message = "User Agregado Correctament";
+                        ViewBag.Message = "Usuario correctamente agregado";
                         ModelState.Clear();
                     }
                 }
@@ -96,7 +96,7 @@ namespace quizfun.Controllers
     
 
         // GET: Speaker/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(Cuenta id)
         {
             try
             {

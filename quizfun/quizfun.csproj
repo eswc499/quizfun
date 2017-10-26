@@ -185,8 +185,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\c1Controller.cs" />
-    <Compile Include="Controllers\c2Controller.cs" />
     <Compile Include="Controllers\ca1Controller.cs" />
+    <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndeController.cs" />
@@ -274,7 +274,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Validate.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -289,13 +291,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\c1\c1.cshtml" />
-    <Content Include="Views\c2\c2.cshtml" />
     <Content Include="Views\Inde\Inde.cshtml" />
     <Content Include="Views\log2\log2.cshtml" />
     <Content Include="Views\quiz\quiz.cshtml" />
     <Content Include="Views\ca1\ca1.cshtml" />
-    <Content Include="Views\Curso\Create.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Cuenta\Cuenta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -315,7 +317,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Tema\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

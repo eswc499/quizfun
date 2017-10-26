@@ -12,7 +12,7 @@ namespace quizfun.Services
         bool createTema(Tema t);
         List<Tema> ReaderNomTema(string tema);
         List<Tema> ReaderTema();
-        bool DeleteTema(string tema);
+        bool DeleteTema(Tema tema);
         bool UpdateTema(Tema t);
     }
 }

@@ -46,12 +46,12 @@ namespace quizfun.Repos
             return bn;
         }
 
-        public bool Delete(string username)
+        public bool Delete(Curso c)
         {
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("DeleteCurso", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nick", username);
+            cmd.Parameters.AddWithValue("@Nick", c.Nombre);
 
             cn.Open();
             int i = cmd.ExecuteNonQuery();
