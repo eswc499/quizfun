@@ -14,5 +14,7 @@ namespace quizfun.Services
         List<Tema> ReaderTema();
         bool DeleteTema(string tema);
         bool UpdateTema(Tema t);
+
+        List<Pregunta> GetPregTem(int id);
     }
 }

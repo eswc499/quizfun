@@ -1,4 +1,6 @@
-﻿using System;
+﻿using quizfun;
+using quizfun.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,11 @@ namespace WebApplication1.Controllers
 {
     public class IndeController : Controller
     {
+        QuizContext db = new QuizContext();
         // GET: Inde
-        public ActionResult Inde(string nombre)
+        public ActionResult Inde(int cuentaId)
         {
-            ViewBag.nombre = nombre;
+            ViewBag.CuentaId = cuentaId;
             ViewBag.Title = "Cursos";
             return View();
         }

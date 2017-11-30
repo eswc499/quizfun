@@ -1,0 +1,75 @@
+﻿@model IEnumerable<quizfun.Models.Pregunta>
+
+@{
+    ViewBag.Title = "IndexQuiz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>IndexQuiz</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tema.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Problema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tiempo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alt1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alt2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alt3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alt4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.respuesta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tema.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problema)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tiempo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alt1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alt2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alt3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alt4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.respuesta)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPregunta", new { id=item.PreguntaId }) |
+            @Html.ActionLink("Delete", "DeletePregunta", new { id=item.PreguntaId })
+        </td>
+    </tr>
+}
+
+</table>

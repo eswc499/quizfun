@@ -140,5 +140,33 @@ namespace quizfun.Repos
             else
                 return false;
         }
+        public List<Pregunta> GetPreguntaTema(int id)
+        {
+            cn = objCON.getConection();
+            SqlCommand cmd = new SqlCommand("GetPreguntasCurso", cn);
+            cmd.Parameters.AddWithValue("@Id", id);
+            List<Pregunta> cuenta = new List<Pregunta>();
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            cn.Open();
+            sda.Fill(dt);
+            cn.Close();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                cuenta.Add(new Pregunta
+                {
+                    Problema = Convert.ToString(dr["Problema"]),
+                    Tiempo = Convert.ToInt32(dr["Tiempo"]),
+                    alt1 = Convert.ToString(dr["alt1"]),
+                    alt2 = Convert.ToString(dr["alt2"]),
+                    alt3 = Convert.ToString(dr["alt3"]),
+                    alt4 = Convert.ToString(dr["alt4"]),
+                    respuesta = Convert.ToString(dr["respuesta"])
+                });
+            }
+            return cuenta;
+        }
     }
 }

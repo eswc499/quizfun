@@ -12,11 +12,11 @@
 <body>
    
     <section class="grid-2">
-        <div class="item-1a" onclick="location.href='@Url.Action("c1", "c1")'">
+        <div class="item-1a" onclick="location.href='@Url.Action("c1", "c1",new { cuentaId=ViewBag.CuentaId})'">
             <h2 style="color:antiquewhite"><b>LENGUAJE</b></h2>
             <img src="~/Content/icono4.png" alt="logo" height="202" width="202" style="align-content:center" />
         </div>
-        <div class="item-2a" onclick="location.href='@Url.Action("ca1", "ca1")'">
+        <div class="item-2a" onclick="location.href='@Url.Action("ca1", "ca1",new { cuentaId=ViewBag.CuentaId})'">
             <h2 style="color:antiquewhite"><b>MATE.</b></h2>
             <img src="~/Content/icono5.png" alt="logo" height="202" width="202" style="align-content:center" />
         </div>

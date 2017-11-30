@@ -25,7 +25,8 @@ namespace quizfun.Models
         public String Colegio { get; set; }
         [Required(ErrorMessage = "El Celular es necesario")]
         public Int32 Celular { get; set; }
+        public int score { get; set; }
 
-        
+
     }
 }

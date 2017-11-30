@@ -202,8 +202,6 @@
     <Compile Include="Controllers\log2Controller.cs" />
     <Compile Include="Controllers\quizController.cs" />
     <Compile Include="Controllers\TemaController.cs" />
-    <Compile Include="Controllers\TemasController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,6 +212,10 @@
     <Compile Include="Migrations\201711290705126_AddPregunta.cs" />
     <Compile Include="Migrations\201711290705126_AddPregunta.Designer.cs">
       <DependentUpon>201711290705126_AddPregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711300805504_addscore.cs" />
+    <Compile Include="Migrations\201711300805504_addscore.Designer.cs">
+      <DependentUpon>201711300805504_addscore.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cuenta.cs" />
@@ -232,8 +234,10 @@
     <Compile Include="Repos\UserRepos.cs" />
     <Compile Include="Services\CursoService.cs" />
     <Compile Include="Services\ICurso.cs" />
+    <Compile Include="Services\IQuizService.cs" />
     <Compile Include="Services\ITemaService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\QuizService.cs" />
     <Compile Include="Services\TemaService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
@@ -250,8 +254,6 @@
     <Content Include="Content\logo1.jpg" />
     <Content Include="Content\logo2.jpg" />
     <Content Include="Content\logo3.jpg" />
-    <Content Include="Content\questions.js" />
-    <Content Include="Content\quiz.js" />
     <Content Include="Content\robot.css" />
     <Content Include="Content\s1.jpg" />
     <Content Include="Content\s2.jpg" />
@@ -313,13 +315,13 @@
     <Content Include="Views\log2\log2.cshtml" />
     <Content Include="Views\quiz\quiz.cshtml" />
     <Content Include="Views\ca1\ca1.cshtml" />
-    <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Cuenta\Cuenta.cshtml" />
-    <Content Include="Views\User\Edit.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Cuenta\Create.cshtml" />
     <Content Include="Views\quiz\CreatePregunta.cshtml" />
+    <Content Include="Views\quiz\DeletePregunta.cshtml" />
+    <Content Include="Views\quiz\IndexQuiz.cshtml" />
+    <Content Include="Views\quiz\EditPregunta.cshtml" />
+    <Content Include="Views\Cuenta\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -346,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711290705126_AddPregunta.resx">
       <DependentUpon>201711290705126_AddPregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711300805504_addscore.resx">
+      <DependentUpon>201711300805504_addscore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

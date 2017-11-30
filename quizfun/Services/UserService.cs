@@ -45,29 +45,15 @@ namespace quizfun.Services
             return userRepos.Update(user);
         }
 
-        public bool Login(string nick, string password)
+        
+        public bool scoreup(string nombre, int id)
         {
-            bool ban = false;
-            Cuenta c = null;
+            return userRepos.updateScore(nombre, id);
+        }
 
-            List<Cuenta> listcuenta = ReaderUser();
-
-            foreach(var cnt in listcuenta)
-            {
-                if (cnt.Nick.CompareTo(nick) == 0 && cnt.Password.CompareTo(password) == 0)
-                {
-                    c = cnt;
-                    ban = true;
-                }
-                
-                if(cnt.Nick.CompareTo(nick)!=0 || cnt.Password.CompareTo(password) != 0)
-                {
-                    c = null;
-                    ban = false;
-                }   
-            }
-
-            return ban;
+        public List<Cuenta> BuscaCuenta(string nombre, string psswd)
+        {
+            return userRepos.BuscarCuenta(nombre, psswd);
         }
     }
 }

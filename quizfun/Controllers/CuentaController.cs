@@ -41,7 +41,7 @@ namespace quizfun.Controllers
                     db.Cuenta.Add(cu);
                     db.SaveChanges();
                     ModelState.Clear();
-                    return RedirectToAction("Inde", "Inde",new { nombre = cu.Nick });
+                    return RedirectToAction("Inde", "Inde",new { cuentaId = cu.CuentaId});
                 }
                 if (cd.Count > 0)
                 {
@@ -50,7 +50,25 @@ namespace quizfun.Controllers
             }
             return View();
         }
-        
-        
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(string nick,string psswd)
+        {
+            var cuenta = usser.BuscaCuenta(nick, psswd).ElementAt(0);
+
+            if (cuenta!=null)
+            {
+                return RedirectToAction("Inde","Inde",new { cuentaId=cuenta.CuentaId});
+            }
+
+            return View();
+        }
+
     }
 }

@@ -10,5 +10,7 @@ namespace quizfun.Repos
     interface IUserRepos : IRepos<Cuenta>
     {
         List<Cuenta> ReaderNick(string nick);
+        bool updateScore(string nombre, int id);
+        List<Cuenta> BuscarCuenta(string nombre, string psswd);
     }
 }

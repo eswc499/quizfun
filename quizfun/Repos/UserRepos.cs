@@ -153,5 +153,79 @@ namespace quizfun.Repos
             else
                 return false;
         }
+
+        public List<Pregunta> GetPreguntaCurso(int id)
+        {
+            cn = objCON.getConection();
+            SqlCommand cmd = new SqlCommand("GetPreguntasCurso", cn);
+            cmd.Parameters.AddWithValue("@Id", id);
+            List<Pregunta> cuenta = new List<Pregunta>();
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            cn.Open();
+            sda.Fill(dt);
+            cn.Close();
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                cuenta.Add(new Pregunta { 
+                    Problema=Convert.ToString(dr["Problema"]),
+                    Tiempo=Convert.ToInt32(dr["Tiempo"]),
+                    alt1=Convert.ToString(dr["alt1"]),
+                    alt2=Convert.ToString(dr["alt2"]),
+                    alt3=Convert.ToString(dr["alt3"]),
+                    alt4=Convert.ToString(dr["alt4"]),
+                    respuesta=Convert.ToString(dr["respuesta"])
+                });
+            }
+            return cuenta;
+        }
+
+        public bool updateScore(string nombre, int id)
+        {
+            cn = objCON.getConection();
+            SqlCommand cmd = new SqlCommand("updateScore", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@score", id);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+
+            cn.Open();
+            int i = cmd.ExecuteNonQuery();
+            cn.Close();
+
+            if (i >= 1)
+                return true;
+            else
+                return false;
+        }
+
+        public List<Cuenta> BuscarCuenta(string nombre, string psswd)
+        {
+            cn = objCON.getConection();
+            List<Cuenta> cuenta = new List<Cuenta>();
+            SqlCommand cmd = new SqlCommand("BuscarCuenta", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Nick", nombre);
+            cmd.Parameters.AddWithValue("@psswd", psswd);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            cn.Open();
+            sda.Fill(dt);
+            cn.Close();
+
+            foreach(DataRow dr in dt.Rows)
+            {
+               cuenta.Add( new Cuenta
+                {
+                   CuentaId=Convert.ToInt32(dr["CuentaId"]),
+                    Nombre = Convert.ToString(dr["Nombre"]),
+                    Nick = Convert.ToString(dr["Nick"]),
+                    Password = Convert.ToString(dr["Password"])
+                });
+            }
+
+            return cuenta;
+        }
     }
 }

@@ -11,8 +11,9 @@ namespace WebApplication1.Controllers
     {
         QuizContext db = new QuizContext();
         // GET: ca1C:\Users\USUARIO\Source\Repos\quizfun3\quizfun\Content\
-        public ActionResult c1()
+        public ActionResult c1(int cuentaId)
         {
+            ViewBag.CuentaId = cuentaId;
             var tema = db.Tema
                 .Where(x => x.Curso.Nombre == "Comunicacion");
             var curso=db.Curso.Find(2);

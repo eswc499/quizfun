@@ -155,7 +155,7 @@ function mostrar4() {
                    {
                     <tbody>
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.Nombre) </td>
+                            <td><a href="@Url.Action("quiz","quiz",new { cuentaId=ViewBag.CuentaId})">@Html.DisplayFor(modelItem => item.Nombre)</a></td>
                             <td>Cuestionario</td>
                             <td>@Html.DisplayFor(modelItem => item.Puntos)</td>
                         </tr>

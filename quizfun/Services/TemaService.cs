@@ -40,6 +40,9 @@ namespace quizfun.Services
             return tmsrv.Update(t);
         }
 
-
+        public List<Pregunta> GetPregTem(int id)
+        {
+            return tmsrv.GetPreguntaTema(id);
+        }
     }
 }

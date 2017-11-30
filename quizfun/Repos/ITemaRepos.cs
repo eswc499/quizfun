@@ -10,5 +10,7 @@ namespace quizfun.Repos
     public interface ITemaRepos : IRepos<Tema>
     {
         List<Tema> ReaderNomTema(String Tema);
+
+        List<Pregunta> GetPreguntaTema(int id);
     }
 }

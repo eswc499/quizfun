@@ -14,6 +14,7 @@ namespace quizfun.Services
         List<Cuenta> ReaderUserId(String Nick);
         bool UpdateUser(Cuenta user);
         bool DeleteUser(string c);
-        bool Login(string nick, string password);
+        bool scoreup(string nombre, int id);
+        List<Cuenta> BuscaCuenta(string nombre, string psswd);
     }
 }
