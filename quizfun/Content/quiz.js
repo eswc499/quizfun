@@ -15,6 +15,7 @@ var c = document.getElementById('contador');
 var q=questions[currentQuestion];
 var sg;
 
+
 function loadQuestion (questionIndex){
 	var q = questions[questionIndex];
 	questionEl.textContent=(questionIndex + 1) + '.' + q.question;
@@ -61,28 +62,28 @@ function loadNextQuestion(){
 }
 
 
-function cuenta(){
-window.setInterval(
-function(){
+    function cuenta(){
+    window.setInterval(
+    function(){
 
-	if(sg>=0 && sg<=10){
-			c.style.color='red';
-	}
+	    if(sg>=0 && sg<=10){
+			    c.style.color='red';
+	    }
 	
-	if(sg>10){
-			c.style.color='white';
-	}
+	    if(sg>10){
+			    c.style.color='white';
+	    }
 	
-	if(sg === 0){
-		loadQuestion(++currentQuestion);
-		sg=questions[currentQuestion].contador;
-		return;
-	}
+	    if(sg === 0){
+		    loadQuestion(++currentQuestion);
+		    sg=questions[currentQuestion].contador;
+		    return;
+	    }
 	
-	c.innerHTML = sg;
-	sg--;
-}, 1000);
-}
+	    c.innerHTML = sg;
+	    sg--;
+    }, 1000);
+    }
 
 
 

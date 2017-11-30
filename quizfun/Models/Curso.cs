@@ -8,9 +8,11 @@ namespace quizfun.Models
 {
     public class Curso
     {
+        public int CursoId { get; set; }
         [Required(ErrorMessage = "El Nombre del curso es necesario")]
         public String Nombre { get; set; }
         [Required(ErrorMessage = "La descripción es necesaria")]
         public String Descripcion { get; set; }
+
     }
 }

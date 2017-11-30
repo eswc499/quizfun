@@ -80,7 +80,7 @@ namespace quizfun.Controllers
                     if (cursservice.updateCr(cr))
                     {
                         ViewBag.Message = "Curso Update Successfully";
-                        //ModelState.Clear();
+                        ModelState.Clear();
                     }
                 }
                 return View();
@@ -95,7 +95,7 @@ namespace quizfun.Controllers
        
         // POST: Curso/Delete/5
         [HttpPost]
-        public ActionResult Delete(Curso nmcr)
+        public ActionResult Delete(string nmcr)
         {
             try
             {

@@ -13,6 +13,7 @@ namespace quizfun.Services
         List<Cuenta> ReaderUser();
         List<Cuenta> ReaderUserId(String Nick);
         bool UpdateUser(Cuenta user);
-        bool DeleteUser(Cuenta c);
+        bool DeleteUser(string c);
+        bool Login(string nick, string password);
     }
 }

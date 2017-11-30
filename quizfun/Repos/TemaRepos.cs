@@ -105,13 +105,13 @@ namespace quizfun.Repos
             return ListTema;
         }
 
-        public bool Delete(Tema tema)
+        public bool Delete(string nombre)
         {
             int i;
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("DeleteTema", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nombre", tema.Nombre);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
 
             cn.Open();
             i = cmd.ExecuteNonQuery();
@@ -123,14 +123,13 @@ namespace quizfun.Repos
                 return false;
         }
 
-        public bool Update(Tema tema)
+        public bool Update(Tema nombre)
         {
             int i;
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("DeleteTema", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nombre", tema.Nombre);
-            cmd.Parameters.AddWithValue("@Curso", tema.Curso);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
 
             cn.Open();
             i = cmd.ExecuteNonQuery();

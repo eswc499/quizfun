@@ -8,6 +8,7 @@ namespace quizfun.Models
 {
     public class Cuenta
     {
+        public int CuentaId { get; set; }
         [Required(ErrorMessage = "El nombre es necesario")]
         public String Nombre { get; set; }
         [Required(ErrorMessage = "El Apellido Paterno es necesario")]

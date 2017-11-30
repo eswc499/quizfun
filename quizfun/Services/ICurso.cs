@@ -13,6 +13,6 @@ namespace quizfun.Services
         List<Curso> ReadCurso(string name);
         List<Curso> ReadAllCr();
         bool updateCr(Curso cr);
-        bool DeleteCr(Curso namecr);
+        bool DeleteCr(string namecr);
     }
 }

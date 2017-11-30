@@ -1,7 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "lenguaje";
-}
+﻿@model IEnumerable<quizfun.Models.Tema>
 
 <script language="javascript">
 
@@ -38,7 +35,7 @@ function mostrar4() {
     <section class="grid-1">
         <div class="item-1">
             <img class="img-circle img-responsive" alt="" src="~/Content/circle2.png" width="200" height="200" style="align-content:center">
-            <h2 style="color:#c3e72f"><b>LENGUAJE</b></h2>
+            <h2 style="color:#c3e72f"><b>@ViewBag.nomcurso</b></h2>
             <ul class="list-group">
                 <li class="list-group-item">
                     <button class="btn btn-default" id="" onClick="mostrar1()" style="font-size:18px">DEFINICION</button>
@@ -72,7 +69,7 @@ function mostrar4() {
             <div class="bs-callout bs-callout-danger" id="def">
                 <h4 style="color:#c3e72f"><b>DEFINICION</b></h4>
                 <p>
-                    El lenguaje literario es, básicamente, la lengua escrita estándar en la que se introducen palabras poco usuales (cultismos, voces inusitadas, extranjerismos, arcaísmos, etc.) y que se somete normalmente a una voluntad de forma.
+                @ViewBag.desccurso    
                 </p>
                 <p>
                     Por una parte, tiene muchos rasgos que lo acercan a la lengua escrita culta; pero por otra, es frecuente que aparezcan en él giros coloquiales y hasta vulgares, para producir ciertos efectos expresivos.
@@ -154,28 +151,17 @@ function mostrar4() {
                             <th>Puntos</th>
                         </tr>
                     </thead>
+                   @foreach (var item in Model)
+                   {
                     <tbody>
                         <tr>
-                            <td>Los Enunciados: Oracion y Frases</td>
+                            <td>@Html.DisplayFor(modelItem => item.Nombre) </td>
                             <td>Cuestionario</td>
-                            <td>50</td>
+                            <td>@Html.DisplayFor(modelItem => item.Puntos)</td>
                         </tr>
-                        <tr>
-                            <td>Los Argumentos</td>
-                            <td>Cuestionario</td>
-                            <td>75 </td>
-                        </tr>
-                        <tr>
-                            <td>Las Preposiciones</td>
-                            <td>Cuestionario</td>
-                            <td> 100 </td>
-                        </tr>
-                        <tr>
-                            <td>Literatura</td>
-                            <td>Cuestionario</td>
-                            <td>150 </td>
-                        </tr>
+
                     </tbody>
+                   }
                 </table>
             </div>
 

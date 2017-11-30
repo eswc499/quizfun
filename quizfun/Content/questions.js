@@ -82,7 +82,7 @@ var questions = [
 	"answer": "2"
 }, 
 {
-	"question": " Si W(x) = x + 3. Hallar: W( ( 3 ) )",
+	"question": " 30",
 	"option1": "9",
 	"option2": "15",
 	"option3": "12",

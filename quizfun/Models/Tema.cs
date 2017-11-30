@@ -8,8 +8,11 @@ namespace quizfun.Models
 {
     public class Tema
     {
+        public int TemaId { get; set; }
         [Required(ErrorMessage ="El Nombre es necesario")]
-        public String Nombre { get; set; }
+        public string Nombre { get; set; }
+        public string Puntos { get; set; }
+        public int CursoId { get; set; }
         public Curso Curso { get; set; }
 
     }

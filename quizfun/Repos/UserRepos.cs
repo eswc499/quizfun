@@ -52,12 +52,12 @@ namespace quizfun.Repos
 
         }
 
-        public bool Delete(Cuenta c)
+        public bool Delete(String nick)
         {
             cn = objCON.getConection();
             SqlCommand cmd = new SqlCommand("DeleteCuenta", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nick", c.Nick);
+            cmd.CommandType = CommandType.StoredProcedure;  
+            cmd.Parameters.AddWithValue("@Nick", nick);
 
             cn.Open();
             int i = cmd.ExecuteNonQuery();
@@ -75,10 +75,8 @@ namespace quizfun.Repos
             List<Cuenta> speakerList = new List<Cuenta>();
             SqlCommand cmd = new SqlCommand("GetCuentas", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            
 
             cn.Open();
             sd.Fill(dt);
@@ -120,10 +118,10 @@ namespace quizfun.Repos
                 speakerList.Add(new Cuenta
                 {
                     Nick = Convert.ToString(dr["Nick"]),
-                    Password = Convert.ToString(dr["Passwor"]),
-                    Nombre = Convert.ToString(dr["Nomuser"]),
-                    Apellido_Paterno = Convert.ToString(dr["ApPater"]),
-                    Apellido_Materno = Convert.ToString(dr["ApMater"]),
+                    Password = Convert.ToString(dr["Password"]),
+                    Nombre = Convert.ToString(dr["Nombre"]),
+                    Apellido_Paterno = Convert.ToString(dr["Apellido_Paterno"]),
+                    Apellido_Materno = Convert.ToString(dr["Apellido_Materno"]),
                     Ciudad = Convert.ToString(dr["Ciudad"]),
                     Colegio = Convert.ToString(dr["Colegio"]),
                     Celular = Convert.ToInt32(dr["Celular"])
@@ -145,7 +143,7 @@ namespace quizfun.Repos
             cmd.Parameters.AddWithValue("@Ciudad", t.Ciudad);
             cmd.Parameters.AddWithValue("@Colegio", t.Colegio);
             cmd.Parameters.AddWithValue("@Celular", t.Celular);
-            
+
             cn.Open();
             int i = cmd.ExecuteNonQuery();
             cn.Close();

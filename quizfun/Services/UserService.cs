@@ -24,7 +24,7 @@ namespace quizfun.Services
             return userRepos.Create(user);
         }
 
-        public bool DeleteUser(Cuenta c)
+        public bool DeleteUser(string c)
         {
             return userRepos.Delete(c);
         }
@@ -43,6 +43,31 @@ namespace quizfun.Services
         public bool UpdateUser(Cuenta user)
         {
             return userRepos.Update(user);
+        }
+
+        public bool Login(string nick, string password)
+        {
+            bool ban = false;
+            Cuenta c = null;
+
+            List<Cuenta> listcuenta = ReaderUser();
+
+            foreach(var cnt in listcuenta)
+            {
+                if (cnt.Nick.CompareTo(nick) == 0 && cnt.Password.CompareTo(password) == 0)
+                {
+                    c = cnt;
+                    ban = true;
+                }
+                
+                if(cnt.Nick.CompareTo(nick)!=0 || cnt.Password.CompareTo(password) != 0)
+                {
+                    c = null;
+                    ban = false;
+                }   
+            }
+
+            return ban;
         }
     }
 }

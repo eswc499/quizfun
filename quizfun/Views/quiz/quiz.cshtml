@@ -1,26 +1,115 @@
-﻿<!doctype html>
+﻿@model quizfun.Models.Pregunta
+<!doctype html>
 <div class="row">
     <div class="col-sm-4"></div>
 </div>
-<div class="row">
-    <div class="col-sm-4">
-        <script language="javascript" src="~/Content/temporizador.js"></script>
-        <body onLoad="start();">
-            <div id="quizContainer" class="container">
-                <div id="contador" align="center"></div>
+@*<div class="row">
+        <div class="col-sm-4">
+            <script language="javascript" src="~/Content/temporizador.js"></script>
+            <body onLoad="">
+                <div id="quizContainer" class="container">
+                    <div id="contador" align="center"></div>
 
-                <h3 id="question" class="question" style="font-size:30px;color:#000000"><b></b></h3>
-                <label class="option"><input type="radio" name="option" value="1"><span id="opt1"></span></label>
-                <label class="option"><input type="radio" name="option" value="2"><span id="opt2"></span></label>
-                <label class="option"><input type="radio" name="option" value="3"><span id="opt3"></span></label>
-                <label class="option"><input type="radio" name="option" value="4"><span id="opt4"></span></label>
-                <button id="nextButton" class="next-btn" onClick="loadNextQuestion()">Siguiente</button>
+                    <h3 id="question" class="question" style="font-size:30px;color:#000000"><b></b></h3>
+                    <label class="option"><input type="radio" name="option" value="1"><span id="opt1"></span></label>
+                    <label class="option"><input type="radio" name="option" value="2"><span id="opt2"></span></label>
+                    <label class="option"><input type="radio" name="option" value="3"><span id="opt3"></span></label>
+                    <label class="option"><input type="radio" name="option" value="4"><span id="opt4"></span></label>
+                    <button id="nextButton" class="next-btn" onClick="loadNextQuestion()">Siguiente</button>
+                </div>
+                <div id="result" class="container result" style="display: none;color:#000000"></div>
+                <label id="Comprob" class="lbrs" style="display: none"></label>
+                <h1 id="hz" style="display: none"></h1>
+                <script src="~/Content/questions.js"></script>
+                <script src="~/Content/quiz.js"></script>
+            </body>
+        </div>
+    </div>*@
+<body>
+    <div class="row">
+        <div class="col-sm-4">
+            <div id="quizContainer" class="container">
+                <form method="post" id="mfm">
+                    <div id="contador" align="center">
+                        @Html.DisplayFor(model => model.Tiempo,new { id="contador"})
+                    </div>
+                    <h3 class="question" style="font-size:30px;color:#000000">@Html.DisplayFor(model => model.Problema)</h3>
+                    <label class="option"><input type="radio" name="value" value="1">@Html.DisplayFor(model => model.alt1)</label>
+                    <label class="option"><input type="radio" name="value" value="2">@Html.DisplayFor(model => model.alt2)</label>
+                    <label class="option"><input type="radio" name="value" value="3">@Html.DisplayFor(model => model.alt3)</label>
+                    <label class="option"><input type="radio" name="value" value="4">@Html.DisplayFor(model => model.alt4)</label>
+                    <input type="number" value="@ViewBag.id" name="id" style="display:none" />
+                    <input type="number" value="@ViewBag.score" name="score" />
+                    <input type="submit" id="nextButton" class="next-btn" value="Siguiente" />
+                </form>
+                
             </div>
-            <div id="result" class="container result" style="display: none;color:#000000"></div>
             <label id="Comprob" class="lbrs" style="display: none"></label>
-            <h1 id="hz" style="display: none"></h1>
-            <script src="~/Content/questions.js"></script>
-            <script src="~/Content/quiz.js"></script>
-        </body>
+            <div id="result" class="container result" style="display: none;color:#000000"></div>
+            
+            
+        </div>
     </div>
-</div>
+</body>
+@ViewBag.id
+<script>
+    var score =@ViewBag.score;
+    var id=@ViewBag.id;
+    var container = document.getElementById('quizContainer');
+    var questionEl = document.getElementById('question');
+    var nextButton = document.getElementById('nextButton');
+    var com = document.getElementById('Comprob');
+    var resultCont = document.getElementById('result');
+
+    function loadNextQuestion() {
+        if (id == 11) {
+            nextButton.textContent = "Finalizar";
+        }
+
+        if (id==12) {
+            container.style.display = 'none';
+            resultCont.style.display = '';
+            com.style.display = '';
+            if (score > 10) {
+                resultCont.textContent = 'Your score: ' + score;
+                com.textContent = 'Felicidades! Aprobó el curso';
+            }
+            if (score <= 10) {
+                resultCont.textContent = 'Your score: ' + score
+                com.textContent = 'Lo sentimos, tendrá que repetir el curso';
+            }
+        }
+    }
+    loadNextQuestion();
+    </script>
+
+<script>
+    var c = document.getElementById('contador');
+    var sg = @Html.DisplayFor(model => model.Tiempo);
+    function cuenta() {
+        window.setInterval(
+            function () {
+
+                if (sg >= 0 && sg <= 10) {
+                    c.style.color = 'red';
+                }
+
+                if (sg > 10) {
+                    c.style.color = 'white';
+                }
+
+                if (sg === 0) {
+
+                }
+
+                c.innerHTML = sg;
+                sg--;
+            }, 1000);
+    }
+
+
+
+    
+    cuenta();
+
+</script>

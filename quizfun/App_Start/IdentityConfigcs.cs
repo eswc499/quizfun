@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace quizfun.Models
+namespace quizfun.App_Start
 {
-    public class Cuestionario
+    public class IdentityConfigcs
     {
-        public Pregunta pregunta { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace quizfun.Services
             return cursvc.ReaderCurso(nmcr);
         }
 
-        public bool DeleteCr(Curso nmcr)
+        public bool DeleteCr(string nmcr)
         {
             return cursvc.Delete(nmcr);
         }

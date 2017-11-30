@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using quizfun.Models;
 using quizfun.Repos;
 using quizfun.Services;
+using System.Web.Http;
+using System.Web.Security;
 
 namespace quizfun.Controllers
 {
@@ -42,7 +44,7 @@ namespace quizfun.Controllers
         }
 
         // POST: Speaker/Create
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public ActionResult Create(Cuenta user)
         {
             try
@@ -69,8 +71,8 @@ namespace quizfun.Controllers
 
 
         // POST: Speaker/Edit/5
-        [System.Web.Http.HttpPost]
-        public ActionResult Edit(String nick, Cuenta user)
+        [System.Web.Mvc.HttpPost]
+        public ActionResult Edit(Cuenta user)
         {
             try
             {
@@ -96,7 +98,7 @@ namespace quizfun.Controllers
     
 
         // GET: Speaker/Delete/5
-        public ActionResult Delete(Cuenta id)
+        public ActionResult Delete(string id)
         {
             try
             {
@@ -111,6 +113,8 @@ namespace quizfun.Controllers
                 return View();
             }
         }
+
+        
 
     }
 }

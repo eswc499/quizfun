@@ -12,6 +12,6 @@ namespace quizfun.Repos
         bool Create(T t);
         List<T> Reader();
         bool Update(T t);
-        bool Delete(T t);
+        bool Delete(String nick);
     }
 }
